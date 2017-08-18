@@ -1,0 +1,11 @@
+<a [routerLink]="['/home']">主页</a>
+<!-- routerLink的值是一个数组，就是为了传参用的 -->
+<!--   [queryParams]="id:1" 1.在查询参数中传递参数 -->
+<a [routerLink]="['/stock',1]">股票详情</a>          
+<input type="button" value="股票详情" (click)="toStockDetail()">
+<!--primary:'home'点开始咨询的时候会回到主页  -->
+<a [routerLink]="[{outlets: {primary:'home', aux:'consult'}}]">开始咨询</a>
+<a [routerLink]="[{outlets: {aux:null}}]">结束咨询</a>
+<!--<router-outlet></router-outlet>这里展示它路由到的子组件的模板  -->
+<router-outlet></router-outlet> 
+<router-outlet name="aux"></router-outlet> 
